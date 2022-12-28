@@ -26,6 +26,7 @@ body{
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   grid-gap: 20px;
+  padding: 20px;
 }
 
 .container .card{
@@ -37,7 +38,9 @@ body{
   position: relative;
   width: 100%;
   height: 310px;
+  overflow: hidden;
 }
+
 .container .card .imgBox img{
   position: absolute;
   top: 0;
@@ -45,4 +48,42 @@ body{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.5s ease-in-out;
+  transform-origin: right;
+}
+
+.container .card:hover .imgBox img{
+  transform: scale(1.5);
+}
+
+.container .card .content{
+  padding: 20px;
+}
+
+.container .card .content .productName h3{
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--black);
+  margin: 5px 0;
+}
+
+.container .card .content .price_rating{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .card .content .price_rating h2{
+  font-size: 20px;
+  color: red;
+  font-weight: 500;
+}
+
+.container .card .content .price_rating .fa{
+  color: yellow;
+  cursor: pointer;
+}
+
+.container .card .content .fa.grey{
+  color:#ccc;
 }
